@@ -23,11 +23,11 @@ class Verification(Base):
     
     # Results
     overall_score = Column(Float, nullable=True)
+    model_used = Column(String(100), nullable=True)
     summary = Column(JSON, nullable=True)  # Verdict counts
     
     # Metadata
     processing_time_ms = Column(Integer, nullable=True)
-    models_used = Column(JSON, default=list)
     sources_checked = Column(Integer, default=0)
     
     # Blockchain anchoring (optional)

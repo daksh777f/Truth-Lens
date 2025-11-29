@@ -10,6 +10,7 @@ import structlog
 
 from app.core.database import get_db
 from app.core.cache import cache
+from app.core.config import settings
 from app.schemas import (
     VerifyRequest,
     VerifyUrlRequest,
@@ -50,6 +51,16 @@ async def verify_content(
     db: AsyncSession = Depends(get_db)
 ):
     """Verify factual claims in text content."""
+    # Check if Groq API key is configured
+    if not settings.GROQ_API_KEY:
+        raise HTTPException(
+            status_code=503,
+            detail={
+                "error": "api_key_missing",
+                "message": "Groq API key not configured. Please add GROQ_API_KEY to your .env file. Get a free key at https://console.groq.com/keys"
+            }
+        )
+    
     start_time = time.time()
     verification_id = f"ver_{uuid.uuid4().hex[:16]}"
     
