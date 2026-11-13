@@ -141,3 +141,10 @@ contracts/typechain-types/
 *.bak
 *.backup
 .scratch/
+
+# Secrets
+.env.*
+!.env.example
+
+# Node
+.vercel/
