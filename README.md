@@ -374,15 +374,6 @@ trustlens/
 
 ---
 
-## Team
-
-- Daksh Goel ([@daksh777f](https://github.com/daksh777f))
-- Alcasinator
-- SahilShah288
-- Pulkit Saraf
-
-<!-- TODO (Daksh): after each name, add one line on what that person built, e.g. "backend API and data pipeline". Hidden comments like this one do not show on GitHub. -->
-
 ## 📄 License
 
 MIT License - See [LICENSE](LICENSE) file
